@@ -1,0 +1,86 @@
+﻿@model Shop.Domain.ViewModels.ProductViewModel
+@{
+    ViewBag.Title = "Изменение";
+    Layout = "_Layout";
+}
+
+@{
+    var textTitle = Model?.Id == 0 ? "Изменение данных" : "Добавление данных";
+}
+
+<div style="padding: 20px;"></div>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <span class="anchor"></span>
+                    <div class="card card-outline-secondary border border-white">
+                        <div class="card-header">
+                            <h3 class="mb-0 text-center ParagraphHome">@textTitle</h3>
+                        </div>
+                        <div class="card-body">
+                            <form autocomplete="on" method="post" asp-controller="Cloth" asp-action="Save" enctype="multipart/form-data">
+                                <input asp-for="Id" hidden/>
+                                <div asp-validation-summary="All" style="font-size:23px; font-family:Impact" class="text-danger text-center"></div>
+                                <div class="form-group">
+                                    <input asp-for="Name" placeholder="Название" class="form-control textbox-dg font-weight-bold text-center" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <textarea autocomplete="new-password" asp-for="Description" placeholder="Описание" class="form-control textbox-dg font-weight-bold text-center" type="text"></textarea>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">$</span>
+                                    <input asp-for="Price" type="text" class="form-control">
+                                    <span class="input-group-text">.00</span>
+                                </div>
+                                <select class="form-control" asp-for="Gender" id="genderId"></select>
+                                <div class="editor-label">Файл изображения</div>
+                                <div class="editor-field">
+                                    <input asp-for="Avatar" type="file" name="Avatar" class="form-control" />
+                                </div>
+                                <button class="btn btn-primary btn-lg float-right" type="submit">Отправить</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section pageScripts
+{
+    <script src="~/lib/select2/js/select2.full.min.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            const result = $('#genderId').select2({
+               placeholder: "Выберите тип",
+               minimumInputLength: 0,
+               allowClear: true,
+               ajax: {
+                    type: "POST",
+                    url: "@Url.Action("GetGenders", "Gender")",
+                    dataType: "json",
+                    data: function (params) {
+                        return {
+                            term: params.term
+                        }
+                    },
+                    processResults: function (result) {
+                        return {
+                            results: $.map(result, function (item) {
+                                debugger;
+                                return {
+                                    id: 1,
+                                    text: item.getDisplayName
+                                };
+                            }),
+                        };
+                    }
+                }
+            });
+          });
+    </script>
+}

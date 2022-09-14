@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Успешная регистрация";
+    Layout = "_Layout";
+}
+
+<div style="padding: 10px;"></div>
+<div class="card text-center">
+  <div class="card-header">
+    Регистрация прошла успешна
+  </div>
+</div>
+
+<div style="padding: 10px;"></div>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card text-center">
+            <h5 class="card-title">Мужская одежда</h5>
+            <img class="rounded" src="https://img1.akspic.ru/originals/8/5/4/9/3/139458-krasnyj_cvet-zajn_malik-moda-odno_napravlenie-konferanse-1920x1080.jpg"/>
+            <div class="card-body">
+                <a asp-controller="Cloth" asp-action="List" asp-route-parameter="1" class="btn btn-primary">К товарам</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card text-center">
+            <h5 class="card-title">Женская одежда</h5>
+            <img class="rounded" src="https://img1.akspic.ru/originals/3/7/6/6/5/156673-krasnoe_plate_blondinka-krasnyj_cvet-obtyagivayushhee_plate_tribalsensation-ozherele-odezhda-1920x1080.jpg"/>
+            <div class="card-body">
+                <a asp-controller="Cloth" asp-action="List" asp-route-parameter="2" class="btn btn-primary">К товарам</a>
+            </div>
+        </div>
+    </div>
+</div>

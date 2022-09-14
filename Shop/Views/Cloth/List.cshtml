@@ -1,0 +1,135 @@
+﻿@model List<Shop.Domain.Entity.Cloth>
+@{
+    ViewBag.Title = "Список";
+    Layout = "_Layout";
+}
+
+@{
+    var cardSize = "col-md-4";
+
+    /*if (Model.Count == 1)
+        cardSize = "col-md-12";
+    else if (Model.Count % 2 == 0)
+        cardSize = "col-md-6";
+    else cardSize = "col-md-4";*/
+}
+
+<style>
+    .card-buttons-group {
+        text-align: right;
+        padding: 10px;
+    }
+</style>
+
+<div style="padding: 10px;"></div>
+@if (Model == null || Model.Count == 0)
+{
+    <div class="card col-md-12">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="https://images.wallpaperscraft.ru/image/single/nogi_dzhinsy_krossovki_160153_1920x1080.jpg" 
+                     class="img-fluid rounded-start rounded">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Список товаров пуст :(</h5>
+                    <p class="card-text">
+                        Список пополниться позже, не расстраивайтесь
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding: 30px;"></div>
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-pills card-header-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" asp-controller="Home" asp-action="Index">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Cloth" asp-action="List" asp-route-parameter="1">Мужские вещи</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" asp-controller="Cloth" asp-action="List" asp-route-parameter="2">Женские вещи</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+}
+else
+{
+    <div class="row">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            var cloth = Model[i];
+            <div class="row row-cols-1 @cardSize text-center">
+                <div class="col" style="padding: 10px;">
+                    <div class="card">
+                        @if (cloth.Avatar != null)
+                        {
+                            <img src="data:image/jpeg;base64,@(Convert.ToBase64String(cloth.Avatar))" />
+                        }
+                        <div class="card-body">
+                            <h5 class="card-title">@cloth.Name</h5>
+                            <p class="card-text">@cloth.Description</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Стоимость: @cloth.Price ₽</li>
+                        </ul>
+                        <div class="card-body">
+                            @{
+                                var id = cloth.Id;
+                            }
+                            <a asp-action="Get" asp-route-id="@id" class="card-link">Перейти</a>
+                            <hr />
+                            <a asp-controller="Basket" asp-action="Add" asp-route-id="@id" class="card-link">Добавить в корзину</a>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <hr />
+                                <a asp-controller="Cloth" asp-action="Delete" asp-route-id="@id" class="btn btn-danger">Удалить</a>   
+                                <a asp-controller="Cloth" asp-action="Save" asp-route-id="@id" class="btn btn-primary">Изменить</a>  
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>   
+}
+<div style="padding: 10px;"></div>
+<div class="card col-md-12">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="https://stockmann.ru/upload/medialibrary/559/143294032_886420295441603_5837745517344800140_n.jpg" 
+                 class="img-fluid rounded-start rounded" />
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title text-center">Levi’s</h5>
+                <p class="card-text" style="font-size: 24px;">
+                    Levi Strauss & Co или Levi’s – пожалуй, самый известный американский производитель джинсовой одежды. Бренд  был основан в 1853 году немецким эмигрантом Леви Штраусом. Безусловно, это непотопляемый флагман джинсовой индустрии, на который ориентируются даже модные дома Европы и Азии. Кстати, само понятие «джинсы» стало применяться только в 1960-е годы, когда в таких рабочих штанах фланировали известные звезды, среди которых Мэрилин Манро, Марлон Брандо, Элвис Пресли.
+                    В ассортименте культовой  марки многочисленные позиции в стилистике casual или sport: джинсы, рубашки, толстовки, свитеры, куртки, пуховики, рюкзаки, головные уборы. Модели джинсов предназначены мужчинам и женщинам любого возраста: скинни, слим, прямые, клеш, свободные.  
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="padding: 10px;"></div>
+<div class="card col-md-12">
+  <div class="row g-0">
+      <div class="col-md-8">
+          <div class="card-body">
+              <h5 class="card-title text-center">Michael Michael Kors</h5>
+              <p class="card-text" style="font-size: 24px;">
+                   Американские модные бренды действительно оказались вне конкуренции по многим показателям, включая количество магазинов и финансовые отчеты. Успешный бренд Michael Kors был создан в 1981 году известным дизайнером Майклу Корсу. Специализируется на производстве доступной одежды, обуви, парфюмерии и аксессуаров. Много вещей выполнены в стиле athleisure, для которого характерно сочетание повседневной одежды casual и спортивных вещей. Коллекции бренда каким-то образом подходят практически всем. В этих комфортных вещах можно быть разным, но всегда самим собой.
+                   Направление MICHAEL Michael Kors сосредоточено на женских предметах гардероба, обуви и сумках различной вместимости. Компания так активно расширяется, что Michail Kors купили легендарный итальянский бренд Versace и британскую марку обуви Jimmy Choo. Среди поклонников бренда можно увидеть Дженнифер Лопес, Хайди Клум, Рэйчел Макадамс, Кэтрин Зета-Джонс.
+              </p>
+          </div>
+      </div>
+          <div class="col-md-4">
+              <img src="https://stockmann.ru/upload/medialibrary/007/241301574_1007854830034028_4186590304022296592_n.jpg" 
+                   class="img-fluid rounded-start rounded" />
+          </div>
+  </div>
+</div>

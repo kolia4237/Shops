@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Главная";
+}
+
+<div style="padding: 10px;"></div>
+<div class="card">
+    <div class="card-header">
+        О магазине
+    </div>
+    <div class="card-body">
+        <p class="card-text">
+            Наш магазин занимается созданием <b>модной одежды на любой вкус</b>, для всех возрастов.
+            У нас Вы найдёте всё, что вам так нужно. Ассортимент магазина постоянно расширяется и дополняется в зависимости от пожеланий клиентов. Женская одежда из наших коллекций – это комфортная,
+            стильная и качественная одежда не только на каждый день, но и для любых ситуаций по доступным ценам.
+            <b>Натуральные материалы</b>, продуманные силуэты, современный дизайн и возможность легкого сочетания моделей помогут вам всегда оставаться в центре внимания и чувствовать себя уместно в любой ситуации.
+            Если Вы любите одеваться ярко, модно и оригинально, у нас вы найдете все необходимое, чтобы всегда быть в центре внимания. У нас большая коллекция для любого тор-
+            жества и праздника, которая сможет удовлетворить вкус самой взыскательной модницы!
+            А для деловых ситуаций, в которых вам непременно нужно выглядеть <b>элегантно и стильно</b>, мы предлагаем вам одежду из коллекции "деловой стиль и офис". 
+        </p>
+        <a asp-controller="Cloth" asp-action="List" class="btn btn-primary">К товарам</a>
+    </div>
+</div>
+<div style="padding: 10px;"></div>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card text-center">
+            <h5 class="card-title">Мужская одежда</h5>
+            <img class="rounded" src="https://img1.akspic.ru/originals/8/5/4/9/3/139458-krasnyj_cvet-zajn_malik-moda-odno_napravlenie-konferanse-1920x1080.jpg"/>
+            <div class="card-body">
+                <a asp-controller="Cloth" asp-action="List" asp-route-parameter="1" class="btn btn-primary">К товарам</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card text-center">
+            <h5 class="card-title">Женская одежда</h5>
+            <img class="rounded" src="https://img1.akspic.ru/originals/3/7/6/6/5/156673-krasnoe_plate_blondinka-krasnyj_cvet-obtyagivayushhee_plate_tribalsensation-ozherele-odezhda-1920x1080.jpg"/>
+            <div class="card-body">
+                <a asp-controller="Cloth" asp-action="List" asp-route-parameter="2" class="btn btn-primary">К товарам</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="padding: 10px;"></div>
+<div class="card col-md-12">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="https://stockmann.ru/upload/medialibrary/560/242020548_1033711344043511_5141491850348816259_n.jpg" 
+                 class="img-fluid rounded-start rounded" />
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title text-center">Esprit</h5>
+                <p class="card-text" style="font-size: 24px;">
+                    Этот американский бренд стремиться к гармонии и радости во всем, и нас призывает видеть прекрасное в повседневной жизни.  Название Esprit дословно переводится, как «остроумие, находчивость». Девиз бренда: «It’s an attitude, not an age» - «Отношения важнее возраста».
+                    Производит одежду и обувь, парфюмерию, аксессуары, ювелирные украшения, сумки, часы, очки, постельное белье и товары для дома. Основная стилистика: casual, office с практичными, удобными моделями на каждый день.
+                    Отличительная черта корпоративной политики: динамичное обновление коллекций, которое происходит каждые две недели
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="padding: 10px;"></div>
+<div class="card col-md-12">
+  <div class="row g-0">
+      <div class="col-md-8">
+          <div class="card-body">
+              <h5 class="card-title text-center">BOSS</h5>
+              <p class="card-text" style="font-size: 24px;">
+                  Немецкая мода подарила миру несколько легендарных дизайнеров, которые буквально сотворили современную моду в катаклизмах XX века. Один из них, конечно, Хьюго Босс. Бренд Huggo Boss был основан почти сто лет назад в 1923 году. История торговой марки началась с ателье по пошиву военной спецодежды, которое постепенно трансформировалось в международный концерн, имеющий авторитет в модной индустрии.
+                  Самые значимые коллаборации бренда: с Baldessarini – коллекция Boss Selection люксового сегмента, со Swarovski – женские украшения и аксессуары, с фирмой Samsung – элитные модели телефонов и электронных гаджетов
+              </p>
+          </div>
+      </div>
+          <div class="col-md-4">
+              <img src="https://stockmann.ru/upload/medialibrary/59c/125982957_867742717362795_6405308377244789721_n.jpg" 
+                   class="img-fluid rounded-start rounded" />
+          </div>
+  </div>
+</div>

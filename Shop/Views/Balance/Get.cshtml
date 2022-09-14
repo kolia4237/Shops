@@ -1,0 +1,112 @@
+﻿@model Shop.Domain.Entity.User
+@{
+    ViewBag.Title = "Баланс";
+    Layout = "_Layout";
+}
+
+<div style="padding: 10px;"></div>
+
+<div class="card col-md-12">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="https://images.wallpaperscraft.ru/image/single/planeta_komety_kosmos_163352_3840x2160.jpg" 
+                 class="img-fluid rounded-start rounded">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body text-center">
+                <h5 class="card-title">Баланс: @Model.Amount 0 $</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="padding: 10px;"></div>
+
+<div class="card col-md-12">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="https://stockmann.ru/upload/medialibrary/62b/209028854_183354057135947_5049633993186919019_n.jpg" 
+                 class="img-fluid rounded-start rounded" />
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title text-center">Jack & Jones</h5>
+                <p class="card-text">
+                    Копенгаген постоянно предлагает новых кандидатов в топовый список модных брендов.
+                    Jack & Jones был основан в 1990 году и сейчас производит мужскую одежду, обувь и аксессуары.
+                    Торговая марка Jack & Jones входит в десятку ведущих европейских производителей джинсовой одежды для молодых людей от 20 до 40 лет.
+                    В ассортименте: джинсы, джинсовые куртки и другие изделия, а так же, линия нижнего белья из натуральных тканей. Бренд имеет отделения в
+                    40 странах, где открыто более 1 тысячи фирменных магазинов (!)
+                </p>
+                <a asp-controller="Basket" asp-action="Add" class="btn btn-primary">Корзина</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="padding: 10px;"></div>
+<div class="card col-md-12">
+  <div class="row g-0">
+      <div class="col-md-8">
+          <div class="card-body">
+              <h5 class="card-title text-center">Noom</h5>
+              <p class="card-text">
+                  Noom – финский бренд, эксклюзивно представленный в наших магазинах, стал настоящим открытием для желающих приобрести качественную, стильную и,
+                  что важно для северных стран, теплую одежду. Собственная торговая марка универмага СТОКМАНН воплощает лучшие традиции скандинавских
+                  производителей, нацеленные на создание практичных и экологичных вещей.
+                  По словам дизайнеров Noom в коллекциях бренда выражено «New Urban Mood», то есть «Новое настроение города».
+              </p>
+              <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Главная</a>
+          </div>
+      </div>
+          <div class="col-md-4">
+              <img src="https://stockmann.ru/upload/medialibrary/b78/noom.jpg" 
+                   class="img-fluid rounded-start rounded" />
+          </div>
+  </div>
+</div>
+<div style="padding: 10px;"></div>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card">
+            <img src="https://stockmann.ru/upload/medialibrary/379/209240214_193734609330671_4614733666061250045_n.jpg" 
+                class="img-fluid rounded-start rounded">
+            <div class="card-body">
+                <h5 class="card-title text-center">Oliver</h5>
+                <p class="card-text">
+                    S.Oliver – немецкий бренд, возникший под влиянием творчества Чарльза Диккенса и английской культуры.
+                    Специализируется на производстве одежды, обуви и аксессуаров для всей семьи. Это удобные повседневные вещи, в которых органично соединяются
+                    простота и актуальные тренды. Одежда S.Oliver отличается оригинальными деталями и необычным кроем
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <img src="https://stockmann.ru/upload/medialibrary/451/231555586_281234633803215_7066884678582569182_n.jpg" 
+                class="img-fluid rounded-start rounded">
+            <div class="card-body">
+                <h5 class="card-title text-center">Marc O'Polo</h5>
+                <p class="card-text">
+                    Marc O'Polo – немецкая торговая марка, которая производит практичную, удобную одежду и разнообразные аксессуары в стиле casual.
+                    Бренд существует с конца 1960-х, название связано с именем итальянского путешественника XIV века – Марко Поло (Marco Polo),
+                    и отражает его главный принцип: движение – основа жизни. Для создания одежды и аксессуаров используются преимущественно натуральные,
+                    органичные ткани и материалы
+                </p>
+            </div>
+        </div>
+    </div>
+     <div class="col-sm-4">
+         <div class="card">
+             <img src="https://stockmann.ru/upload/medialibrary/66a/210242676_280172123870138_4041400877232446678_n.jpg" 
+                class="img-fluid rounded-start rounded">
+             <div class="card-body">
+                 <h5 class="card-title text-center">Karl Lagerfeld</h5>
+                 <p class="card-text">
+                     Noom – финский бренд, эксклюзивно представленный в наших магазинах, стал настоящим открытием для желающих приобрести качественную, стильную и,
+                     что важно для северных стран, теплую одежду. Собственная торговая марка универмага СТОКМАНН воплощает лучшие традиции скандинавских
+                     производителей, нацеленные на создание практичных и экологичных вещей.
+                     По словам дизайнеров Noom в коллекциях бренда выражено «New Urban Mood», то есть «Новое настроение города».
+                 </p>
+             </div>
+         </div>
+        </div>
+</div>

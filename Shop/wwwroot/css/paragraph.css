@@ -1,0 +1,32 @@
+﻿.ParagraphLayout {
+    font-size: 20px;
+    font-family: 'Times New Roman';
+    font-weight: bold;
+    text-shadow: inherit;
+    color: black;
+    border-bottom: 3px solid #fff;
+}
+
+.ParagraphRightShadow {
+    font-size: 20px;
+    font-family: 'Times New Roman';
+    font-weight: bold;
+    text-shadow: inherit;
+    color: white;
+    border-bottom: 3px solid #fff;
+}
+
+.ParagraphHome {
+    font-size: 20px;
+    font-family: 'Comic Sans MS';
+    font-weight: bold;
+    text-shadow: initial;
+    text-align: center;
+}
+
+.ParagraphH3{
+    text-align:center;
+    font-size:23px;
+    color:white;
+    font-family:Impact;
+}
